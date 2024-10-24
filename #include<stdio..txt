@@ -1,0 +1,98 @@
+#include<stdio.h>
+
+void addition (int *ptr1, int *ptr2)
+{
+int add;
+add =(*ptr1)+(*ptr2);
+
+printf("Addition of first and second number: %d",add);
+}
+void sum(int *ptr1)
+{
+int sum=0,b;
+
+while((*ptr1)!=0)
+{
+b=(*ptr1)%10;
+
+sum= sum+b;
+
+(*ptr1)=(*ptr1)/10;
+}
+printf("Sum of first digit= %d", sum);
+
+}
+void multiply(int *ptr1, int *ptr2) 
+{int product;
+
+product= (*ptr1)*(*ptr2);
+
+printf("Multiply of first number and second number is: %d", product);
+}
+int main()
+{ char question;
+
+int n1,n2;
+while(question!='N'&&question!='n')
+{
+printf("Enter n1= ");
+
+scanf("%d",&n1);
+
+printf("Enter n2= ");
+
+scanf("%d", &n2);
+
+printf("Enter any one of the options below: \n 1 for addition of two numbers.\n 2 for sum of digit of first number entered.\n 3 for multiplication of two numbers.\n");
+
+int option;
+
+
+
+printf("Enter your choice: ");
+
+scanf("%d",&option);
+
+if (option>3||option<1)
+{
+printf("You entered something wrong!\n");
+}
+else
+{
+switch (option) 
+{ case 1:
+addition(&n1,&n2);
+
+break;
+
+case 2:
+
+sum(&n1);
+
+break;
+
+case 3:
+
+multiply(&n1,&n2);
+
+break;
+
+default:
+
+printf("Something went wrong!\n");
+
+break;
+
+}
+
+}
+
+printf("\nEnter anything if you want to continue & enter N if you want to stop: ");
+getchar();
+scanf(" %c", &question);
+
+}
+
+return 0;
+
+}
